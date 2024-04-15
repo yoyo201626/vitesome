@@ -4,6 +4,7 @@ import { resolve } from 'pathe';
 import vue from '@vitejs/plugin-vue';
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import Components from 'unplugin-vue-components/vite'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 import Unfonts from 'unplugin-fonts/vite'
 import svgLoader from 'vite-svg-loader';
 
@@ -25,6 +26,11 @@ export default defineConfig({
     Components({
       extensions: ['vue'],
       dts: 'src/components.d.ts',
+      resolvers: [
+        AntDesignVueResolver({
+          importStyle: false, // css in js
+        }),
+      ],
     }),
     // https://github.com/stafyniaksacha/vite-plugin-fonts#readme
     Unfonts({

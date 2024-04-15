@@ -3,6 +3,7 @@ import { createI18n } from 'vue-i18n';
 import '@unocss/reset/tailwind.css'
 import 'virtual:uno.css'
 import 'virtual:unocss-devtools'
+import 'ant-design-vue/dist/reset.css';
 
 import App from './App.vue';
 import './styles/base.css';
