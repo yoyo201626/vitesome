@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
-import Unocss from 'unocss/vite'
+import UnoCSS from 'unocss/vite'
 import { resolve } from 'pathe';
 import vue from '@vitejs/plugin-vue';
-import VueI18n from '@intlify/vite-plugin-vue-i18n';
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import Components from 'unplugin-vue-components/vite'
-import ViteFonts from 'vite-plugin-fonts';
+import Unfonts from 'unplugin-fonts/vite'
 import svgLoader from 'vite-svg-loader';
 
 // https://vitejs.dev/config/
@@ -27,16 +27,16 @@ export default defineConfig({
       dts: 'src/components.d.ts',
     }),
     // https://github.com/stafyniaksacha/vite-plugin-fonts#readme
-    ViteFonts({
+    Unfonts({
       google: {
         families: ['Open Sans', 'Montserrat', 'Fira Sans'],
       },
     }),
 
-    Unocss({ /* options */ }),
+    UnoCSS(),
 
     // https://github.com/intlify/vite-plugin-vue-i18n
-    VueI18n({
+    VueI18nPlugin({
       include: [resolve(__dirname, './locales/**')],
     }),
   ],
