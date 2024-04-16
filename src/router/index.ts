@@ -5,6 +5,10 @@ const routes = [
     path: '/',
     component: () => import('/@/pages/Index.vue'),
   },
+  {
+    path: '/editor',
+    component: () => import('/@/pages/Editor.vue'),
+  },
 ];
 
 export const Router = createRouter({
